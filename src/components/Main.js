@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity,
-  FlatList,
   Image,
   TextInput,
   ScrollView,
@@ -52,45 +50,57 @@ const styles = StyleSheet.create({
 });
 const Main = ({
   name,
-  setInput1,
+  setNameInput,
   nickname,
-  setInput2,
+  setNicknameInput,
   bio,
-  setInput3,
+  setBioInput,
   img,
 }) => {
   return (
     <ScrollView>
       <View style={styles.item}>
-        <Image style={styles.img} source={{uri: img}} />
-        <Text style={styles.title}>Name: {name}</Text>
+        <Image style={styles.img} source={{ uri: img }} />
+        <Text style={styles.title}>
+          Name:
+          {name}
+        </Text>
         <TextInput
           style={styles.input}
           placeholder="Введите имя для изменения"
-          onChangeText={value => setInput1(value)}
+          onChangeText={(value) => setNameInput(value)}
         />
-        <Text style={styles.nickname}>Nickname: {nickname}</Text>
+        <Text style={styles.nickname}>
+          Nickname:
+          {nickname}
+        </Text>
         <TextInput
           style={styles.input}
           placeholder="Введите nickname что бы изменить"
-          onChangeText={value => setInput2(value)}
+          onChangeText={(value) => setNicknameInput(value)}
         />
-        <Text style={styles.nickname}>Bio: {bio}</Text>
+        <Text style={styles.nickname}>
+          Bio:
+          {bio}
+        </Text>
         <TextInput
           multiline
           style={styles.input}
           placeholder="Введите информацию о себе"
-          onChangeText={value => setInput3(value)}
+          onChangeText={(value) => setBioInput(value)}
         />
       </View>
     </ScrollView>
   );
 };
 
-// Main.propTypes = {
-
-//     text: PropTypes.string,
-//     key: PropTypes.string,
-//   }).isRequired,
-//   deleteItem: PropTypes.func.isRequired,
+Main.propTypes = {
+  name: PropTypes.string.isRequired,
+  setNameInput: PropTypes.func.isRequired,
+  nickname: PropTypes.string.isRequired,
+  setNicknameInput: PropTypes.func.isRequired,
+  bio: PropTypes.string.isRequired,
+  setBioInput: PropTypes.func.isRequired,
+  img: PropTypes.string.isRequired,
+};
 export default Main;

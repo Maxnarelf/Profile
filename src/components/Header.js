@@ -17,14 +17,11 @@ const styles = StyleSheet.create({
 });
 
 const Header = () => {
-  
   return (
     <View>
       <Text style={styles.title}>Profile</Text>
     </View>
   );
 };
-
-
 
 export default Header;

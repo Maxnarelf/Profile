@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import Header from './src/components/Header';
 import Main from './src/components/Main';
 import Footer from './src/components/Footer';
-import { StyleSheet, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,29 +13,25 @@ const styles = StyleSheet.create({
 
 const App = () => {
   const [name, setName] = useState('Lunyov Sergey');
-  const [input1, setInput1] = useState('');
+  const [nameInput, setNameInput] = useState('');
   const [nickname, setNickname] = useState('Maxnar');
-  const [input2, setInput2] = useState('');
+  const [nicknameInput, setNicknameInput] = useState('');
   const [bio, setBio] = useState('Люблю спорт, игры');
-  const [input3, setInput3] = useState('');
-  const img =
-    'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
+  const [bioInput, setBioInput] = useState('');
+  const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
 
   const onClick = () => {
-    if (input1.length > 0) {
-      setName(input1);
-      } else {
-      name;
+    if (nameInput.length > 0) {
+      setName(nameInput);
+      setNameInput('');
     }
-    if (input2.length > 0) {
-      setNickname(input2);
-    } else {
-      nickname;
+    if (nicknameInput.length > 0) {
+      setNickname(nicknameInput);
+      setNicknameInput('');
     }
-    if (input3.length > 0) {
-      setBio(input3);
-    } else {
-      bio;
+    if (bioInput.length > 0) {
+      setBio(bioInput);
+      setBioInput('');
     }
   };
 
@@ -44,11 +40,11 @@ const App = () => {
       <Header />
       <Main
         name={name}
-        setInput1={setInput1}
+        setNameInput={setNameInput}
         nickname={nickname}
-        setInput2={setInput2}
+        setNicknameInput={setNicknameInput}
         bio={bio}
-        setInput3={setInput3}
+        setBioInput={setBioInput}
         img={img}
       />
       <Footer onClick={onClick} />

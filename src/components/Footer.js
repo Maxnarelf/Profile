@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { 
+import {
   StyleSheet,
-  Text, 
+  Text,
   TouchableOpacity
 } from 'react-native';
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 // eslint-disable-next-line react/function-component-definition
-const Footer = ({onClick}) => {
+const Footer = ({ onClick }) => {
   return (
     <TouchableOpacity style={styles.btn} onPress={onClick}>
       <Text style={styles.btn_text}>Сохранить изменения</Text>
@@ -35,7 +35,8 @@ const Footer = ({onClick}) => {
   );
 };
 
-
-
+Footer.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
 
 export default Footer;

@@ -7,10 +7,10 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "node_modules/.bin/eslint src --max-wаrnings=0"
+    "lint": "node_modules/.bin/eslint src --max-warnings=0"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-airbnb": "^18.2.1",
     "husky": "^7.0.4",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
