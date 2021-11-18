@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   title: {
-    fontFamily: 'serif',
     fontSize: 22,
     textAlign: 'center',
     marginTop: 20,
@@ -26,7 +25,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   nickname: {
-    fontFamily: 'sans-serif',
     fontSize: 20,
     textAlign: 'center',
     marginTop: 5,
@@ -50,10 +48,13 @@ const styles = StyleSheet.create({
 });
 const Main = ({
   name,
+  nameInput,
   setNameInput,
   nickname,
+  nicknameInput,
   setNicknameInput,
   bio,
+  bioInput,
   setBioInput,
   img,
 }) => {
@@ -67,6 +68,7 @@ const Main = ({
         </Text>
         <TextInput
           style={styles.input}
+          value={nameInput}
           placeholder="Введите имя для изменения"
           onChangeText={(value) => setNameInput(value)}
         />
@@ -76,7 +78,8 @@ const Main = ({
         </Text>
         <TextInput
           style={styles.input}
-          placeholder="Введите nickname что бы изменить"
+          value={nicknameInput}
+          placeholder="Введите nickname для изменения"
           onChangeText={(value) => setNicknameInput(value)}
         />
         <Text style={styles.nickname}>
@@ -86,6 +89,7 @@ const Main = ({
         <TextInput
           multiline
           style={styles.input}
+          value={bioInput}
           placeholder="Введите информацию о себе"
           onChangeText={(value) => setBioInput(value)}
         />
@@ -96,10 +100,13 @@ const Main = ({
 
 Main.propTypes = {
   name: PropTypes.string.isRequired,
+  nameInput: PropTypes.string.isRequired,
   setNameInput: PropTypes.func.isRequired,
   nickname: PropTypes.string.isRequired,
+  nicknameInput: PropTypes.string.isRequired,
   setNicknameInput: PropTypes.func.isRequired,
   bio: PropTypes.string.isRequired,
+  bioInput: PropTypes.string.isRequired,
   setBioInput: PropTypes.func.isRequired,
   img: PropTypes.string.isRequired,
 };

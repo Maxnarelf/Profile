@@ -40,10 +40,13 @@ const App = () => {
       <Header />
       <Main
         name={name}
+        nameInput={nameInput}
         setNameInput={setNameInput}
         nickname={nickname}
+        nicknameInput={nicknameInput}
         setNicknameInput={setNicknameInput}
         bio={bio}
+        bioInput={bioInput}
         setBioInput={setBioInput}
         img={img}
       />
