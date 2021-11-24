@@ -9,23 +9,16 @@ const Stack = createNativeStackNavigator();
 const Navigate = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{ header: () => null }}
+      >
         <Stack.Screen
           name="Home"
           component={Home}
-          options={
-            {
-              title: 'Home page',
-              headerStyle: { backgroundColor: '#eb5d3d', height: 100 },
-              headerTitleStyle: { fontWeight: '500' },
-              headerTitleAlign: 'center'
-            }
-          }
         />
         <Stack.Screen
           name="Profile"
           component={Profile}
-          options={{ title: 'Back' }}
         />
 
       </Stack.Navigator>

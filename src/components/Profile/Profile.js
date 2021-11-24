@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -9,9 +10,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
   },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#474747',
+    marginLeft: 5,
+    marginTop: -26
+  }
 });
 
-const Profile = () => {
+const Profile = ({ route }) => {
   const [name, setName] = useState('Lunyov Sergey');
   const [nameInput, setNameInput] = useState('');
   const [nickname, setNickname] = useState('Maxnar');
@@ -38,6 +46,10 @@ const Profile = () => {
   return (
     <View style={styles.container}>
       <Header />
+      <Text style={styles.text}>
+
+        {route?.params?.prevScreen}
+      </Text>
       <Main
         name={name}
         nameInput={nameInput}
@@ -50,9 +62,17 @@ const Profile = () => {
         setBioInput={setBioInput}
         img={img}
       />
+
       <Footer onClick={onClick} />
     </View>
   );
 };
 
+Profile.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      prevScreen: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};
 export default Profile;
