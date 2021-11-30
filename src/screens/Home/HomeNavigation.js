@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
   item: {
     width: 80,
     alignItems: 'center',
+  },
+  text: {
+    color: 'goldenrod'
   }
 });
 const HomeNavigation = () => {
@@ -30,23 +33,23 @@ const HomeNavigation = () => {
 
       <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Profile')}>
         <SvgHome width={40} height={40} color="goldenrod" />
-        <Text>Home</Text>
+        <Text style={styles.text}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Profile')}>
         <SvgList width={40} height={40} color="goldenrod" />
-        <Text>List</Text>
+        <Text style={styles.text}>List</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Profile')}>
         <SvgSearch width={40} height={40} color="goldenrod" />
-        <Text>Search</Text>
+        <Text style={styles.text}>Search</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Profile')}>
         <SvgFavorite width={40} height={40} color="goldenrod" />
-        <Text>Favorite</Text>
+        <Text style={styles.text}>Favorite</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Profile', { prevScreen: 'Home' })}>
         <SvgProfile width={40} height={40} color="goldenrod" />
-        <Text>Profile</Text>
+        <Text style={styles.text}>Profile</Text>
       </TouchableOpacity>
 
     </View>

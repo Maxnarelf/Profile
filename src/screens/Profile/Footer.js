@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
   }
 });
 
-// eslint-disable-next-line react/function-component-definition
 const Footer = ({ onClick }) => {
   return (
     <TouchableOpacity style={styles.btn} onPress={onClick}>

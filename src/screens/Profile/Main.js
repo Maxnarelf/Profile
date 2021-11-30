@@ -70,7 +70,7 @@ const Main = ({
           style={styles.input}
           value={nameInput}
           placeholder="Введите имя для изменения"
-          onChangeText={(value) => setNameInput(value)}
+          onChangeText={setNameInput}
         />
         <Text style={styles.nickname}>
           Nickname:
@@ -80,7 +80,7 @@ const Main = ({
           style={styles.input}
           value={nicknameInput}
           placeholder="Введите nickname для изменения"
-          onChangeText={(value) => setNicknameInput(value)}
+          onChangeText={setNicknameInput}
         />
         <Text style={styles.nickname}>
           Bio:
@@ -91,7 +91,7 @@ const Main = ({
           style={styles.input}
           value={bioInput}
           placeholder="Введите информацию о себе"
-          onChangeText={(value) => setBioInput(value)}
+          onChangeText={setBioInput}
         />
       </View>
     </ScrollView>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Header from './Header';
@@ -28,20 +28,23 @@ const Profile = ({ route }) => {
   const [bioInput, setBioInput] = useState('');
   const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
 
-  const onClick = () => {
-    if (nameInput.length > 0) {
-      setName(nameInput);
-      setNameInput('');
-    }
-    if (nicknameInput.length > 0) {
-      setNickname(nicknameInput);
-      setNicknameInput('');
-    }
-    if (bioInput.length > 0) {
-      setBio(bioInput);
-      setBioInput('');
-    }
-  };
+  const onClick = useCallback(
+    () => {
+      if (nameInput.length > 0) {
+        setName(nameInput);
+        setNameInput('');
+      }
+      if (nicknameInput.length > 0) {
+        setNickname(nicknameInput);
+        setNicknameInput('');
+      }
+      if (bioInput.length > 0) {
+        setBio(bioInput);
+        setBioInput('');
+      }
+    },
+    []
+  );
 
   return (
     <View style={styles.container}>

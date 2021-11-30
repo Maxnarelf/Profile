@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   StyleSheet,
   Text,
@@ -32,14 +32,16 @@ const styles = StyleSheet.create({
 
 const Header = () => {
   const navigation = useNavigation();
-  const back = () => {
-    navigation?.goBack();
-  };
+  const back = useCallback(
+    () => {
+      navigation?.goBack();
+    },
+    []
+  );
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <TouchableOpacity style={styles.touch} onPress={back}>
-
         <SvgBack style={styles.back} />
       </TouchableOpacity>
     </View>
