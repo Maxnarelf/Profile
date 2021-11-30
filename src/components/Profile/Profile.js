@@ -71,8 +71,11 @@ const Profile = ({ route }) => {
 Profile.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({
-      prevScreen: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
+      prevScreen: PropTypes.string
+    })
+  })
+};
+Profile.defaultProps = {
+  route: {}
 };
 export default Profile;
