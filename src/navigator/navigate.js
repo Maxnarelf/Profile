@@ -3,56 +3,93 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import PropTypes from 'prop-types';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+// import Home from '../screens/Home/Home';
 // import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Home from '../screens/Home/Home';
 import Profile from '../screens/Profile/Profile';
 import Search from '../screens/Search/Search';
 import Favorite from '../screens/Favorite/Favorite';
 import List from '../screens/List/List';
-import BottomNavigation from './components/bottomNavigation';
-// import DrawerNavigation from './components/drawerNavigation';
+// import BottomNavigation from './components/bottomNavigation';
+import TabNavigation from './components/TabNavigation';
 
 // const Tab = createBottomTabNavigator();
-const Tab = createMaterialBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const Navigate = () => {
   return (
     <NavigationContainer>
       {/* <DrawerNavigation /> */}
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          header: () => null,
-          tabBarIcon: ({ focused, size, color }) => (
-            <BottomNavigation route={route} focused={focused} size={size} color={color} />
-          )
-        })}
-        activeColor="goldenrod"
-        inactiveColor="#815e08"
-        barStyle={{ backgroundColor: '#303f52' }}
+      <Drawer.Navigator
+        screenOptions={{
+          headerShown: true,
+          headerTitleAlign: 'center'
+        }}
       >
-        <Tab.Screen
-          name="Home"
-          component={Home}
+        <Drawer.Screen
+          name="Home page"
+          component={TabNavigation}
+          options={{
+            drawerIcon: () => (
+              <FontAwesome5
+                name="home"
+                size={20}
+              />
+            )
+          }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="List"
           component={List}
+          options={{
+            drawerIcon: () => (
+              <FontAwesome5
+                name="list"
+                size={20}
+              />
+            )
+          }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Search"
           component={Search}
+          options={{
+            drawerIcon: () => (
+              <FontAwesome5
+                name="search"
+                size={20}
+              />
+            )
+          }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Favorite"
           component={Favorite}
+          options={{
+            drawerIcon: () => (
+              <FontAwesome5
+                name="heart"
+                size={20}
+              />
+            )
+          }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Profile"
           component={Profile}
+          options={{
+            drawerIcon: () => (
+              <FontAwesome5
+                name="user-circle"
+                size={20}
+              />
+            )
+          }}
         />
 
-      </Tab.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };

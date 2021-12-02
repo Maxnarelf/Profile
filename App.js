@@ -4,6 +4,7 @@ import Navigate from './src/navigator/navigate';
 const App = () => {
   return (
     <Navigate />
+
   );
 };
 
