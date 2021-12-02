@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SvgBack from '../../assets/icons/arrow-left-solid.svg';
+import SvgBack from '../../../assets/icons/arrow-left-solid.svg';
 
 const styles = StyleSheet.create({
   back: {

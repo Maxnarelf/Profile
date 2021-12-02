@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
-const Main = ({
+const Body = ({
   name,
   nameInput,
   setNameInput,
@@ -98,7 +98,7 @@ const Main = ({
   );
 };
 
-Main.propTypes = {
+Body.propTypes = {
   name: PropTypes.string.isRequired,
   nameInput: PropTypes.string.isRequired,
   setNameInput: PropTypes.func.isRequired,
@@ -110,4 +110,4 @@ Main.propTypes = {
   setBioInput: PropTypes.func.isRequired,
   img: PropTypes.string.isRequired,
 };
-export default Main;
+export default Body;

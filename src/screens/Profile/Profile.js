@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
 
 const styles = StyleSheet.create({
   container: {
@@ -53,7 +53,7 @@ const Profile = ({ route }) => {
 
         {route?.params?.prevScreen}
       </Text>
-      <Main
+      <Body
         name={name}
         nameInput={nameInput}
         setNameInput={setNameInput}

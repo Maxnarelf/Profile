@@ -3,11 +3,11 @@ import {
   StyleSheet, View, TouchableOpacity, Text
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SvgProfile from '../../assets/icons/user-circle-solid.svg';
-import SvgSearch from '../../assets/icons/search-solid.svg';
-import SvgFavorite from '../../assets/icons/heart-regular.svg';
-import SvgList from '../../assets/icons/list-alt-regular.svg';
-import SvgHome from '../../assets/icons/home-solid.svg';
+import SvgProfile from '../../../assets/icons/user-circle-solid.svg';
+import SvgSearch from '../../../assets/icons/search-solid.svg';
+import SvgFavorite from '../../../assets/icons/heart-regular.svg';
+import SvgList from '../../../assets/icons/list-alt-regular.svg';
+import SvgHome from '../../../assets/icons/home-solid.svg';
 
 const styles = StyleSheet.create({
   homeContainer: {
