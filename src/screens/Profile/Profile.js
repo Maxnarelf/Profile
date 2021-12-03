@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
@@ -47,7 +48,7 @@ const Profile = ({ route }) => {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header />
       <Text style={styles.text}>
 
@@ -67,7 +68,7 @@ const Profile = ({ route }) => {
       />
 
       <Footer onClick={onClick} />
-    </View>
+    </SafeAreaView>
   );
 };
 
