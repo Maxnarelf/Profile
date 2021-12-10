@@ -25,7 +25,11 @@ const Navigate = () => {
       <Drawer.Navigator
         screenOptions={{
           headerShown: true,
-          headerTitleAlign: 'center'
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#303f52'
+          },
+          headerTintColor: 'goldenrod'
         }}
       >
         <Drawer.Screen

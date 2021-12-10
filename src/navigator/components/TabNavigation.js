@@ -5,7 +5,7 @@ import Profile from '../../screens/Profile/Profile';
 import Search from '../../screens/Search/Search';
 import Favorite from '../../screens/Favorite/Favorite';
 import List from '../../screens/List/List';
-import BottomNavigation from './bottomNavigation';
+import BottomNavigation from './BottomNavigation';
 
 const Tab = createMaterialBottomTabNavigator();
 

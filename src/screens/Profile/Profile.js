@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
 
@@ -49,7 +49,7 @@ const Profile = ({ route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <Text style={styles.text}>
 
         {route?.params?.prevScreen}
