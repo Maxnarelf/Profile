@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
 });
 
 const Profile = ({ route }) => {
-  const { name, nickname, bio } = useSelector((state) => state.profileReducer);
+  const {
+    name, nameInput, nickname, nicknameInput, bio, bioInput 
+  } = useSelector((state) => state.profileReducer);
   const dispatch = useDispatch();
   // const [name, setName] = useState('Lunyov Sergey');
   // const [nameInput, setNameInput] = useState('');
