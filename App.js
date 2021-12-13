@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import RNBootSplash from 'react-native-bootsplash';
 import { Provider } from 'react-redux';
 import Navigate from './src/navigator/navigate';
-import { Store } from './src/store/store';
+import store from './src/store/store';
 
 const App = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const App = () => {
     }, 1000);
   }, []);
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <Navigate />
     </Provider>
   );

@@ -21,7 +21,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_NAME_INPUT:
       return {
         ...state,
-        name: action.name
+        name: action.nameInput
       };
     case SET_NICKNAME:
       return {
@@ -31,7 +31,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_NICKNAME_INPUT:
       return {
         ...state,
-        nickname: action.nickname
+        nickname: action.nicknameInput
       };
     case SET_BIO:
       return {
@@ -41,7 +41,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_BIO_INPUT:
       return {
         ...state,
-        bio: action.bio
+        bio: action.bioInput
       };
     default:
       return state;

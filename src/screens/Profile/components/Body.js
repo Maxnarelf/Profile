@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -8,6 +8,10 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
+import { useSelector } from 'react-redux';
+import {
+  setNameInput, setNicknameInput, setBioInput
+} from '../../../store/profile/actions';
 
 const styles = StyleSheet.create({
   header: {
@@ -46,18 +50,11 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
-const Body = ({
-  name,
-  nameInput,
-  setNameInput,
-  nickname,
-  nicknameInput,
-  setNicknameInput,
-  bio,
-  bioInput,
-  setBioInput,
-  img,
-}) => {
+const Body = () => {
+  const {
+    name, nameInput, nickname, nicknameInput, bio, bioInput
+  } = useSelector((state) => state.profileReducer);
+  const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
   return (
     <ScrollView>
       <View style={styles.item}>
@@ -98,16 +95,16 @@ const Body = ({
   );
 };
 
-Body.propTypes = {
-  name: PropTypes.string.isRequired,
-  nameInput: PropTypes.string.isRequired,
-  setNameInput: PropTypes.func.isRequired,
-  nickname: PropTypes.string.isRequired,
-  nicknameInput: PropTypes.string.isRequired,
-  setNicknameInput: PropTypes.func.isRequired,
-  bio: PropTypes.string.isRequired,
-  bioInput: PropTypes.string.isRequired,
-  setBioInput: PropTypes.func.isRequired,
-  img: PropTypes.string.isRequired,
-};
+// Body.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   nameInput: PropTypes.string.isRequired,
+//   setNameInput: PropTypes.func.isRequired,
+//   nickname: PropTypes.string.isRequired,
+//   nicknameInput: PropTypes.string.isRequired,
+//   setNicknameInput: PropTypes.func.isRequired,
+//   bio: PropTypes.string.isRequired,
+//   bioInput: PropTypes.string.isRequired,
+//   setBioInput: PropTypes.func.isRequired,
+//   img: PropTypes.string.isRequired,
+// };
 export default Body;

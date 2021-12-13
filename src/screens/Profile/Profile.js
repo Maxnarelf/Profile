@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 
 const Profile = ({ route }) => {
   const {
-    name, nameInput, nickname, nicknameInput, bio, bioInput 
+    nameInput, nicknameInput, bioInput
   } = useSelector((state) => state.profileReducer);
   const dispatch = useDispatch();
   // const [name, setName] = useState('Lunyov Sergey');
@@ -35,7 +35,6 @@ const Profile = ({ route }) => {
   // const [nicknameInput, setNicknameInput] = useState('');
   // const [bio, setBio] = useState('Люблю спорт, игры');
   // const [bioInput, setBioInput] = useState('');
-  const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
 
   const onClick = useCallback(
     () => {
@@ -62,18 +61,7 @@ const Profile = ({ route }) => {
 
         {route?.params?.prevScreen}
       </Text>
-      <Body
-        name={name}
-        nameInput={nameInput}
-        setNameInput={setNameInput}
-        nickname={nickname}
-        nicknameInput={nicknameInput}
-        setNicknameInput={setNicknameInput}
-        bio={bio}
-        bioInput={bioInput}
-        setBioInput={setBioInput}
-        img={img}
-      />
+      <Body />
 
       <Footer onClick={onClick} />
     </SafeAreaView>
