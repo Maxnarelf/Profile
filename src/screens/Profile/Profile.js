@@ -2,6 +2,10 @@ import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  setName, setNameInput, setNickname, setNicknameInput, setBio, setBioInput
+} from '../../store/profile/actions';
 // import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
@@ -21,26 +25,28 @@ const styles = StyleSheet.create({
 });
 
 const Profile = ({ route }) => {
-  const [name, setName] = useState('Lunyov Sergey');
-  const [nameInput, setNameInput] = useState('');
-  const [nickname, setNickname] = useState('Maxnar');
-  const [nicknameInput, setNicknameInput] = useState('');
-  const [bio, setBio] = useState('Люблю спорт, игры');
-  const [bioInput, setBioInput] = useState('');
+  const { name, nickname, bio } = useSelector((state) => state.profileReducer);
+  const dispatch = useDispatch();
+  // const [name, setName] = useState('Lunyov Sergey');
+  // const [nameInput, setNameInput] = useState('');
+  // const [nickname, setNickname] = useState('Maxnar');
+  // const [nicknameInput, setNicknameInput] = useState('');
+  // const [bio, setBio] = useState('Люблю спорт, игры');
+  // const [bioInput, setBioInput] = useState('');
   const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
 
   const onClick = useCallback(
     () => {
       if (nameInput.length > 0) {
-        setName(nameInput);
+        dispatch(setName(nameInput));
         setNameInput('');
       }
       if (nicknameInput.length > 0) {
-        setNickname(nicknameInput);
+        dispatch(setNickname(nicknameInput));
         setNicknameInput('');
       }
       if (bioInput.length > 0) {
-        setBio(bioInput);
+        dispatch(setBio(bioInput));
         setBioInput('');
       }
     },
