@@ -1,94 +1,58 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import {
-  StyleSheet,
   View,
   Text,
   Image,
   TextInput,
   ScrollView,
 } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   setNameInput, setNicknameInput, setBioInput
 } from '../../../store/profile/actions';
+import bodyStyles from './styles/bodyStyles';
 
-const styles = StyleSheet.create({
-  header: {
-    marginBottom: 30,
-  },
-  item: {
-    width: '100%',
-    marginBottom: 30,
-  },
-  title: {
-    fontSize: 22,
-    textAlign: 'center',
-    marginTop: 20,
-    color: '#474747',
-    fontWeight: 'bold',
-  },
-  nickname: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginTop: 5,
-    color: '#474747',
-    fontWeight: 'bold',
-  },
-  img: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    marginHorizontal: '25%',
-    marginTop: 25,
-  },
-  input: {
-    borderWidth: 1,
-    borderRadius: 10,
-    marginHorizontal: '10%',
-    marginVertical: 10,
-    height: 50,
-  },
-});
 const Body = () => {
   const {
     name, nameInput, nickname, nicknameInput, bio, bioInput
   } = useSelector((state) => state.profileReducer);
   const img = 'http://img10.reactor.cc/pics/post/alex-malveda-artist-Itachi-Uchiha-Naruto-4138966.jpeg';
+  const dispatch = useDispatch();
   return (
     <ScrollView>
-      <View style={styles.item}>
-        <Image style={styles.img} source={{ uri: img }} />
-        <Text style={styles.title}>
+      <View style={bodyStyles.item}>
+        <Image style={bodyStyles.img} source={{ uri: img }} />
+        <Text style={bodyStyles.title}>
           Name:
           {name}
         </Text>
         <TextInput
-          style={styles.input}
+          style={bodyStyles.input}
           value={nameInput}
           placeholder="Введите имя для изменения"
-          onChangeText={setNameInput}
+          onChangeText={(value) => dispatch(setNameInput(value))}
         />
-        <Text style={styles.nickname}>
+        <Text style={bodyStyles.nickname}>
           Nickname:
           {nickname}
         </Text>
         <TextInput
-          style={styles.input}
+          style={bodyStyles.input}
           value={nicknameInput}
           placeholder="Введите nickname для изменения"
-          onChangeText={setNicknameInput}
+          onChangeText={(value) => dispatch(setNicknameInput(value))}
         />
-        <Text style={styles.nickname}>
+        <Text style={bodyStyles.nickname}>
           Bio:
           {bio}
         </Text>
         <TextInput
           multiline
-          style={styles.input}
+          style={bodyStyles.input}
           value={bioInput}
           placeholder="Введите информацию о себе"
-          onChangeText={setBioInput}
+          onChangeText={(value) => dispatch(setBioInput(value))}
         />
       </View>
     </ScrollView>

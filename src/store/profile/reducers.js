@@ -1,6 +1,6 @@
 import {
   SET_NAME, SET_NAME_INPUT, SET_NICKNAME, SET_NICKNAME_INPUT, SET_BIO, SET_BIO_INPUT
-} from './actions';
+} from './types';
 
 const initialState = {
   name: 'Lunyov Sergey',
@@ -21,7 +21,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_NAME_INPUT:
       return {
         ...state,
-        name: action.nameInput
+        nameInput: action.nameInput
       };
     case SET_NICKNAME:
       return {
@@ -31,7 +31,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_NICKNAME_INPUT:
       return {
         ...state,
-        nickname: action.nicknameInput
+        nicknameInput: action.nicknameInput
       };
     case SET_BIO:
       return {
@@ -41,7 +41,7 @@ const profileReducer = (state = initialState, action) => {
     case SET_BIO_INPUT:
       return {
         ...state,
-        bio: action.bioInput
+        bioInput: action.bioInput
       };
     default:
       return state;

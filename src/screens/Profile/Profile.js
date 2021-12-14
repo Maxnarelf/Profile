@@ -40,15 +40,15 @@ const Profile = ({ route }) => {
     () => {
       if (nameInput.length > 0) {
         dispatch(setName(nameInput));
-        setNameInput('');
+        dispatch(setNameInput(''));
       }
       if (nicknameInput.length > 0) {
         dispatch(setNickname(nicknameInput));
-        setNicknameInput('');
+        dispatch(setNicknameInput(''));
       }
       if (bioInput.length > 0) {
         dispatch(setBio(bioInput));
-        setBioInput('');
+        dispatch(setBioInput(''));
       }
     },
     []
@@ -58,7 +58,6 @@ const Profile = ({ route }) => {
     <SafeAreaView style={styles.container}>
       {/* <Header /> */}
       <Text style={styles.text}>
-
         {route?.params?.prevScreen}
       </Text>
       <Body />
