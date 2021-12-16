@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import SvgBack from '../../../assets/icons/arrow-left-solid.svg';
-import headerStyles from './styles/headerStyles';
+import styles from '../styles';
 
 const Header = () => {
   const navigation = useNavigation();
@@ -17,10 +17,10 @@ const Header = () => {
     []
   );
   return (
-    <View style={headerStyles.container}>
-      <Text style={headerStyles.title}>Profile</Text>
-      <TouchableOpacity style={headerStyles.touch} onPress={back}>
-        <SvgBack style={headerStyles.back} />
+    <View style={styles.container}>
+      <Text style={styles.titleHeader}>Profile</Text>
+      <TouchableOpacity style={styles.touch} onPress={back}>
+        <SvgBack style={styles.back} />
       </TouchableOpacity>
     </View>
   );
