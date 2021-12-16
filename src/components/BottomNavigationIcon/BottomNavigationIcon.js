@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import PropTypes from 'prop-types';
 
-const BottomNavigation = ({
+const BottomNavigationIcon = ({
   route, focused, size, color
 }) => {
   let iconName;
@@ -38,18 +38,18 @@ const BottomNavigation = ({
   );
 };
 
-BottomNavigation.propTypes = {
+BottomNavigationIcon.propTypes = {
   route: PropTypes.shape(),
   size: PropTypes.number,
   focused: PropTypes.bool,
   color: PropTypes.string
 };
 
-BottomNavigation.defaultProps = {
+BottomNavigationIcon.defaultProps = {
   route: {},
   size: undefined,
   focused: false,
   color: ''
 };
 
-export default BottomNavigation;
+export default BottomNavigationIcon;

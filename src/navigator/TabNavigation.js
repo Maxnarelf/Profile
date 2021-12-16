@@ -1,11 +1,11 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Home from '../../screens/Home/Home';
-import Profile from '../../screens/Profile/Profile';
-import Search from '../../screens/Search/Search';
-import Favorite from '../../screens/Favorite/Favorite';
-import List from '../../screens/List/List';
-import BottomNavigation from './BottomNavigation';
+import Home from '../screens/Home/Home';
+import Profile from '../screens/Profile/Profile';
+import Search from '../screens/Search/Search';
+import Favorite from '../screens/Favorite/Favorite';
+import List from '../screens/List/List';
+import BottomNavigationIcon from '../components/BottomNavigationIcon/BottomNavigationIcon';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -15,7 +15,7 @@ const TabNavigator = () => {
       screenOptions={({ route }) => ({
         header: () => null,
         tabBarIcon: ({ focused, size, color }) => (
-          <BottomNavigation route={route} focused={focused} size={size} color={color} />
+          <BottomNavigationIcon route={route} focused={focused} size={size} color={color} />
         )
       })}
       activeColor="goldenrod"

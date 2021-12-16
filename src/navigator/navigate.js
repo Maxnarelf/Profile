@@ -6,22 +6,13 @@ import Profile from '../screens/Profile/Profile';
 import Search from '../screens/Search/Search';
 import Favorite from '../screens/Favorite/Favorite';
 import List from '../screens/List/List';
-import TabNavigation from './components/TabNavigation';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import PropTypes from 'prop-types';
-// import Home from '../screens/Home/Home';
-// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-// import BottomNavigation from './components/bottomNavigation';
-
-// const Tab = createBottomTabNavigator();
+import TabNavigation from './TabNavigation';
 
 const Drawer = createDrawerNavigator();
 
 const Navigate = () => {
   return (
     <NavigationContainer>
-      {/* <DrawerNavigation /> */}
       <Drawer.Navigator
         screenOptions={{
           headerShown: true,
@@ -92,7 +83,6 @@ const Navigate = () => {
             )
           }}
         />
-
       </Drawer.Navigator>
     </NavigationContainer>
   );

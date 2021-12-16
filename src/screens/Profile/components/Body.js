@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -59,16 +58,4 @@ const Body = () => {
   );
 };
 
-// Body.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   nameInput: PropTypes.string.isRequired,
-//   setNameInput: PropTypes.func.isRequired,
-//   nickname: PropTypes.string.isRequired,
-//   nicknameInput: PropTypes.string.isRequired,
-//   setNicknameInput: PropTypes.func.isRequired,
-//   bio: PropTypes.string.isRequired,
-//   bioInput: PropTypes.string.isRequired,
-//   setBioInput: PropTypes.func.isRequired,
-//   img: PropTypes.string.isRequired,
-// };
 export default Body;
