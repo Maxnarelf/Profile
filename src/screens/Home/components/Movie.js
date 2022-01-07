@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     width: '20%',
     fontWeight: '700',
     textAlign: 'center',
+    color: '#474747'
 
   }
 });

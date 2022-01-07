@@ -4,9 +4,10 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
-import styles from '../styles';
+import gStyles from '../styles';
 
 const Footer = ({ onClick }) => {
+  const styles = gStyles();
   return (
     <TouchableOpacity style={styles.btn} onPress={onClick}>
       <Text style={styles.btn_text}>Сохранить изменения</Text>

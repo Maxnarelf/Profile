@@ -4,15 +4,17 @@ import {
   Text,
   View,
 } from 'react-native';
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold'
-  }
-});
+import { useTheme } from '@react-navigation/native';
 
 const Favorite = () => {
+  const { colors } = useTheme();
+  const styles = StyleSheet.create({
+    text: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      color: colors.text
+    }
+  });
   return (
     <View>
       <Text style={styles.text}>Favorite</Text>

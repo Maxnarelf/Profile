@@ -8,14 +8,14 @@ import {
 } from '../../store/profile/actions';
 import Body from './components/Body';
 import Footer from './components/Footer';
-import styles from './styles';
+import gStyles from './styles';
 
 const Profile = ({ route }) => {
   const {
     nameInput, nicknameInput, bioInput
   } = useSelector((state) => state.profileReducer);
   const dispatch = useDispatch();
-
+  const styles = gStyles();
   const onClick = useCallback(
     () => {
       if (nameInput.length > 0) {
