@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { shallowEqual, useSelector } from 'react-redux';
 import TabNavigation from './TabNavigation';
 import DrawerContent from './DrawerContent';
+import Map from '../screens/Map/Map';
 import { Light, Dark } from '../theme/theme';
 
 const Drawer = createDrawerNavigator();
@@ -33,9 +34,11 @@ const Navigate = () => {
         <Drawer.Screen
           name="Home page"
           component={TabNavigation}
-
         />
-
+        <Drawer.Screen
+          name="Map"
+          component={Map}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );

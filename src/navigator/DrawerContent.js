@@ -90,6 +90,17 @@ const DrawerContent = () => {
           label="Profile"
           onPress={() => navigation.navigate('Profile')}
         />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Icon
+              name="google-maps"
+              color={color}
+              size={size}
+            />
+          )}
+          label="Map"
+          onPress={() => navigation.navigate('Map')}
+        />
         <SafeAreaView style={{ backgroundColor: colors.card }}>
           <View style={styles.preference}>
             <Text style={{ color: colors.text }}>Dark Theme</Text>
