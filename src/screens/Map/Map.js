@@ -87,9 +87,9 @@ const Map = () => {
           });
         }}
         query={{
-          key: 'AIzaSyB0UKuNu4RvcibDA2le3LAAeJIFz2qmPN4',
-          language: 'ru',
-          components: 'country: Ukraine',
+          key: 'AIzaSyDYnjegLhuYHNATdkRMVB9aBcj3WvjwMh0',
+          language: 'en',
+          components: 'country: us',
           types: 'establishment',
           radius: 30000,
           location: `${region.latitude}, ${region.longitude}`
