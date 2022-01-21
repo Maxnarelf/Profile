@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { shallowEqual, useSelector } from 'react-redux';
+import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import TabNavigation from './TabNavigation';
 import DrawerContent from './DrawerContent';
 import Map from '../screens/Map/Map';
 import { Light, Dark } from '../theme/theme';
+import { toggleDeviceTheme } from '../store/theme/actions';
 
 const Drawer = createDrawerNavigator();
 
 const Navigate = () => {
-  const scheme = useColorScheme();
-  const { appTheme } = useSelector(
+  const colorScheme = useColorScheme();
+  const { appTheme, deviceTheme } = useSelector(
     ({ appThemeReducer }) => appThemeReducer,
     shallowEqual,
   );
-  const currentTheme = appTheme || scheme;
+  const dispatch = useDispatch();
+  const currentTheme = appTheme || deviceTheme;
   const isDarkTheme = currentTheme === 'dark';
+  useEffect(() => {
+    if (deviceTheme) {
+      dispatch(toggleDeviceTheme(colorScheme));
+    }
+  }, [deviceTheme]);
   return (
     <NavigationContainer theme={isDarkTheme ? Dark : Light}>
       <Drawer.Navigator
