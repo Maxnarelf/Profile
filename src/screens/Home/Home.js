@@ -37,7 +37,7 @@ const Home = () => {
             data={movies}
             keyExtractor={({ id }) => id}
             renderItem={({ item }) => (
-              <Movie key={item.id} item={item} />
+              <Movie item={item} />
             )}
           />
         </View>
